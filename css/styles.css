@@ -20,7 +20,7 @@ body {
  color: white;
 }
 
-.homeButton{
+.homeButton, .levelButton{
     border-radius: 1em;
     border: 0.08em solid white;
     color: white;
@@ -30,3 +30,4 @@ body {
     align-items: center;
     justify-content: center;
 }
+
