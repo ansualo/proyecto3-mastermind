@@ -1,0 +1,32 @@
+*{
+    font-family: 'Concert One', cursive;
+}
+
+body {
+    width: 100vw;
+    height: 100wh;
+    margin: 0;
+    padding: 0;
+}
+
+.background{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(38, 36, 40);
+}
+
+.logo{
+ font-size: 3em;
+ color: white;
+}
+
+.homeButton{
+    border-radius: 1em;
+    border: 0.08em solid white;
+    color: white;
+    font-size: x-large;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
