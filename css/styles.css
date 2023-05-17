@@ -3,8 +3,7 @@
 }
 
 body {
-    width: 100vw;
-    height: 100wh;
+    overflow: hidden;
     margin: 0;
     padding: 0;
 }
@@ -29,5 +28,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.square{
+    width: 6em;
+    height: 6em;
+    border: 0.2em solid white;
 }
 
