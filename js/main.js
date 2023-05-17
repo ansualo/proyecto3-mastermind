@@ -1,4 +1,4 @@
-// Guardar nombre del jugador
+// GUARDAR NOMBRE JUGADOR
 
 const guardadoNombre = () => {
 
@@ -15,3 +15,26 @@ const guardadoNombre = () => {
 
 // resultado.innerHTML = `Hola ${sessionStorage.getItem("name")}`;
 
+
+
+// COLOR PICKER
+
+// window.addEventListener("load", startup, false);
+
+function startup() {
+    let colorPicker = document.querySelector("#colorPicker");
+    colorPicker.value = "#8a2be2";
+    colorPicker.addEventListener("input", updateFirst, false);
+    colorPicker.addEventListener("change", updateAll, false);
+    colorPicker.select();
+}
+
+function updateFirst(event) {
+    const colorSquare = document.getElementById("square1");
+    colorSquare.style.backgroundColor = event.target.value;
+}
+
+function updateAll(event) {
+    const colorSquare = document.getElementById("square1");
+    colorSquare.style.backgroundColor = event.target.value;
+}

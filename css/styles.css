@@ -3,7 +3,7 @@
 }
 
 body {
-    overflow: hidden;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
 }
@@ -35,4 +35,5 @@ body {
     height: 6em;
     border: 0.2em solid white;
 }
+
 
