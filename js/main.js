@@ -55,7 +55,10 @@ const saveLevelIntermediate = () => {
     sessionStorage.setItem("level", "intermediateRow");
     window.location.href = "./colores.html";
 }
-
+const saveLevelAdvanced = () => {
+    sessionStorage.setItem("level", "advancedRow");
+    window.location.href = "./colores.html";
+}
 // show the row shows the correct row depending on the level
 
 // document.getElementById("beginnerRow").style.display= "none";
@@ -66,9 +69,6 @@ window.onload = (event) => {
     let selected = document.getElementById(selectedLevel);
     selected.style.display = "flex";
 };
-
-
-
 
 
 

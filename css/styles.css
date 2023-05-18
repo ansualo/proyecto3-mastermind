@@ -10,7 +10,7 @@ body {
     padding: 0;
 }
 
-.backgroundHome{
+.backgroundLong{
     height: 100vh;
     background-color: rgb(38, 36, 40);
 }
@@ -43,13 +43,14 @@ body {
 #playerName{
     height: 2.5em;
 }
+
 .square{
     width: 6em;
     height: 6em;
     border: 0.2em solid white;
 }
 
-#intermediateRow, #beginnerRow{
+#intermediateRow, #beginnerRow, #advancedRow{
     display: none;
 }
 
