@@ -3,15 +3,25 @@
 }
 
 body {
+    width: 100vw;
+    height: 100vh;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
 }
 
-.background{
-    width: 100vw;
+.backgroundHome{
     height: 100vh;
     background-color: rgb(38, 36, 40);
+}
+
+.background{
+    height: 90vh;
+    background-color: rgb(38, 36, 40);
+}
+
+.heigthNavbar{
+    height: 10vh;
 }
 
 .logo{
@@ -30,10 +40,16 @@ body {
     justify-content: center;
 }
 
+#playerName{
+    height: 2.5em;
+}
 .square{
     width: 6em;
     height: 6em;
     border: 0.2em solid white;
 }
 
+#intermediateRow, #beginnerRow{
+    display: none;
+}
 

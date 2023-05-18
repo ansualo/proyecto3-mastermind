@@ -3,10 +3,7 @@
 const guardadoNombre = () => {
 
     let valor = document.getElementById("playerName").value;
-
     sessionStorage.setItem("name", valor);
-
-    window.location.href = "../resultado.html";
 }
 
 // Coger el nombre, todavia no esta bien
@@ -17,16 +14,22 @@ const guardadoNombre = () => {
 
 
 
-// COLOR PICKER
+// COLOR PICKER no funciona
 
-// window.addEventListener("load", startup, false);
+window.addEventListener("load", startup, false);
 
-function startup() {
-    let colorPicker = document.querySelector("#colorPicker");
-    colorPicker.value = "#8a2be2";
-    colorPicker.addEventListener("input", updateFirst, false);
-    colorPicker.addEventListener("change", updateAll, false);
-    colorPicker.select();
+let colorPicker = document.getElementsByClassName("colorpicker");
+let arrayColorPicker = Array.from(colorPicker);
+
+function startup(event) {
+    arrayColorPicker.map(
+        elemento => {
+            colorPicker.value = "#8a2be2";
+            colorPicker.addEventListener("input", updateFirst, false);
+            colorPicker.addEventListener("change", updateAll, false);
+            colorPicker.select();
+        }
+    )
 }
 
 function updateFirst(event) {
@@ -38,3 +41,40 @@ function updateAll(event) {
     const colorSquare = document.getElementById("square1");
     colorSquare.style.backgroundColor = event.target.value;
 }
+
+
+
+// HIDDEN ROWS 
+
+// save level
+const saveLevelBeginner = () => {
+    sessionStorage.setItem("level", "beginnerRow");
+    window.location.href = "./colores.html";
+}
+const saveLevelIntermediate = () => {
+    sessionStorage.setItem("level", "intermediateRow");
+    window.location.href = "./colores.html";
+}
+
+// show the row shows the correct row depending on the level
+
+// document.getElementById("beginnerRow").style.display= "none";
+// document.getElementById("intermediateRow").style.display= "none";
+
+window.onload = (event) => {
+    let selectedLevel = sessionStorage.getItem("level");
+    let selected = document.getElementById(selectedLevel);
+    selected.style.display = "flex";
+};
+
+
+
+
+
+
+
+
+
+
+
+

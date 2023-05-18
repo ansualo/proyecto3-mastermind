@@ -17,39 +17,65 @@
 </head>
 <body>
 
-    <nav class="navbar bg-body-tertiary p-0">
-        <div class="container-fluid justify-content-center bg-dark">
+    <nav class="navbar p-0">
+        <div class="container-fluid justify-content-center bg-dark heigthNavbar">
           <a href="../index.html" class="navbar-brand fs-2 text-light">······ mastermind ······</a>
         </div>
     </nav>
 
-    <div class="container-fluid background d-flex flex-column align-items-center">
+    <div class="container-fluid background p-0 d-flex flex-column align-items-center bg-warning">
 
         <div class="row h-25">
-            <div class="col fs-1 text-light d-flex align-items-center">Choose your colours</div>
+            <div class="col fs-1 text-light d-flex align-items-center" onclick="addSquares()">Choose your colours</div>
         </div>
-        <div class="row row-cols-2 row-cols-md-4 h-50 ">
+
+         <!-- BEGINNER -->
+        <div class="row row-cols-2 bg-primary" id="beginnerRow">
+            <div class="col-md-3 d-flex flex-column align-items-center ">
+                <div class="m-4 m-md-5 square" id="square1"></div>
+                <input type="color" class="colorpicker" id="colorPicker1"/>
+            </div>
+            <div class="col-md-3 d-flex flex-column align-items-center">
+                <div class="m-4 m-md-5 square" id="square2"></div>
+                <input type="color" class="colorpicker" id="colorPicker2"/>
+            </div>
+            <div class="col-md-3 d-flex flex-column align-items-center">
+                <div class="m-4 m-md-5 square" id="square3"></div>
+                <input type="color" class="colorpicker"id="colorPicker3"/>
+            </div>
+            <div class="col-md-3 d-flex flex-column align-items-center">
+                <div class="m-4 m-md-5 square" id="square4"></div>
+                <input type="color" class="colorpicker" id="colorPicker4"/>
+            </div>
+        </div>
+
+        <!-- MEDIUM -->
+        <div class="row row-cols-2 row-cols-md-5 bg-danger hiddenSquares" id="intermediateRow">
             <div class="col d-flex flex-column align-items-center">
                 <div class="m-4 m-md-5 square" id="square1"></div>
-                <input type="color" id="colorPicker" onclick="startup()"/>
+                <input type="color" class="colorpicker" id="colorPicker1"/>
             </div>
             <div class="col d-flex flex-column align-items-center">
                 <div class="m-4 m-md-5 square" id="square2"></div>
-                <input type="color" id="colorPicker2"/>
+                <input type="color" class="colorpicker" id="colorPicker2"/>
             </div>
             <div class="col d-flex flex-column align-items-center">
                 <div class="m-4 m-md-5 square" id="square3"></div>
-                <input type="color" id="colorPicker3"/>
+                <input type="color" class="colorpicker"id="colorPicker3"/>
             </div>
             <div class="col d-flex flex-column align-items-center">
                 <div class="m-4 m-md-5 square" id="square4"></div>
-                <input type="color" id="colorPicker4"/>
+                <input type="color" class="colorpicker" id="colorPicker4"/>
             </div>
-
+            <div class="col d-flex flex-column align-items-center">
+                <div class="m-4 m-md-5 square" id="square4"></div>
+                <input type="color" class="colorpicker" id="colorPicker5"/>
+            </div>
         </div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <script src="./js/main.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
