@@ -41,26 +41,27 @@ window.addEventListener("load", startup, false);
 
 let colorPicker = document.getElementsByClassName("colorpicker");
 let arrayColorPicker = Array.from(colorPicker);
+let colorArray = [];
 
 function startup(event) {
     arrayColorPicker.map(
         (element) => {
             element.value = "#8a2be2";
             element.addEventListener("input", (event)=> updateFirst(event, element), false);
-            element.addEventListener("change", (event)=> updateAll(event, element), false);
             element.select();
         }
     )
 }
 
-function updateFirst(event,element) {
-
+const updateFirst = (event,element) => {
     let colorSquare = document.getElementById(`square${element.id}`);
     colorSquare.style.backgroundColor = event.target.value;
+    let color = getComputedStyle(colorSquare).backgroundColor;
+    colorArray[element.id] = color;
 }
 
-function updateAll(event,element) {
+console.log(colorArray);
 
-    const colorSquare1 = document.getElementById(`square${element.id}`);
-    colorSquare1.style.backgroundColor = event.target.value;
-}
+
+
+
