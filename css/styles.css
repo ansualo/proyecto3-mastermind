@@ -84,8 +84,8 @@ body {
 /* GAME PAGE */
 
 .squareGame{
-    width: 2em;
-    height: 2em;
+    width: 1.5em;
+    height: 1.5em;
     border: 0.1em solid white;
 }
 

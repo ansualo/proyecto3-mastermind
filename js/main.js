@@ -30,7 +30,7 @@ const saveLevelAdvanced = () => {
 // shows the correct row depending on the level
 
 let selectedLevel = sessionStorage.getItem("level");
-    let selected = document.getElementById(selectedLevel);
+let selected = document.getElementById(selectedLevel);
 
 window.onload = (event) => {
     selected.style.display = "flex";
@@ -73,7 +73,7 @@ const saveChosenColours = () => {
 
 // GAME
 
-window.addEventListener("load", ()=>createRows());
+window.addEventListener("load", ()=>howManyRows());
 
 let board = document.getElementById("game");
 
@@ -105,3 +105,20 @@ const createRows = () => {
     board.appendChild(mainCol);
 };
 
+
+const howManyRows = () => {
+
+    if (selectedLevel == "beginnerRow"){
+        for (let i=0; i < 10; i++){
+            createRows();
+        }
+    } else if (selectedLevel == "intermediateRow"){
+        for (let i=0; i < 8; i++){
+            createRows();
+        }
+    } else {
+        for (let i=0; i < 6; i++){
+            createRows();
+        }
+    }
+}
