@@ -1,27 +1,27 @@
+
 *{
     font-family: 'Concert One', cursive;
+    background-color: rgb(38, 36, 40);
 }
 
 body {
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
     margin: 0;
     padding: 0;
 }
 
-.backgroundLong{
-    height: 100vh;
-    background-color: rgb(38, 36, 40);
-}
-
 .background{
     height: 90vh;
-    background-color: rgb(38, 36, 40);
 }
 
 .heigthNavbar{
     height: 10vh;
+}
+
+/* HOME PAGE */
+.backgroundHome{
+    height: 100vh;
 }
 
 .logo{
@@ -40,12 +40,17 @@ body {
     justify-content: center;
 }
 
+/* LEVELS PAGE */
+
 #playerName{
     height: 2.5em;
 }
 
+
+/* COLOURS PAGE */
+
 .coloursPage{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .square{
@@ -54,6 +59,24 @@ body {
     border: 0.2em solid white;
 }
 
+.colorpicker{
+    border: 0.1em solid white;
+}
+
+#playerName{
+    background-color: white;
+}
+
 #intermediateRow, #beginnerRow, #advancedRow{
     display: none;
+}
+
+
+/* ABOUT PAGE */
+
+
+.borderAbout{
+    border: 0.5em groove white;
+    border-radius: 1em;
+
 }
