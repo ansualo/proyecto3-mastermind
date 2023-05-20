@@ -44,6 +44,10 @@ body {
     height: 2.5em;
 }
 
+.coloursPage{
+    overflow: hidden;
+}
+
 .square{
     width: 6em;
     height: 6em;

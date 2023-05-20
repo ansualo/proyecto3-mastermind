@@ -26,7 +26,8 @@ const saveLevelAdvanced = () => {
     sessionStorage.setItem("level", "advancedRow");
     window.location.href = "./colores.html";
 }
-// show the row shows the correct row depending on the level
+
+// shows the correct row depending on the level
 window.onload = (event) => {
     let selectedLevel = sessionStorage.getItem("level");
     let selected = document.getElementById(selectedLevel);
@@ -41,7 +42,7 @@ window.addEventListener("load", startup, false);
 
 let colorPicker = document.getElementsByClassName("colorpicker");
 let arrayColorPicker = Array.from(colorPicker);
-let colorArray = [];
+let arrayChosenColours = [];
 
 function startup(event) {
     arrayColorPicker.map(
@@ -57,11 +58,14 @@ const updateFirst = (event,element) => {
     let colorSquare = document.getElementById(`square${element.id}`);
     colorSquare.style.backgroundColor = event.target.value;
     let color = getComputedStyle(colorSquare).backgroundColor;
-    colorArray[element.id] = color;
+    arrayChosenColours[element.id] = color;
 }
 
-console.log(colorArray);
+console.log(arrayChosenColours);
 
-
+const saveChosenColours = () => {
+    sessionStorage.setItem("chosenColours", JSON.stringify(arrayChosenColours));
+    window.location.href = "./juego.html";
+}
 
 
