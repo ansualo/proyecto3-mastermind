@@ -37,38 +37,50 @@ window.onload = (event) => {
 };
 
 
-
 // COLOR PICKER
 
-window.addEventListener("load", startup, false);
+window.addEventListener("load", startup);
 
 let colorPicker = document.getElementsByClassName("colorpicker");
 let arrayColorPicker = Array.from(colorPicker);
-let arrayChosenColours = [];
+let objectChosenColours = {};
 
 function startup(event) {
     arrayColorPicker.map(
         (element) => {
             element.value = "#8a2be2";
-            element.addEventListener("input", (event) => updateFirst(event, element), false);
+            element.addEventListener("input", (event) => updateSquare(event, element));
             element.select();
         }
     )
 }
 
-const updateFirst = (event, element) => {
+const updateSquare = (event, element) => {
     let colorSquare = document.getElementById(`square${element.id}`);
     colorSquare.style.backgroundColor = event.target.value;
     let color = getComputedStyle(colorSquare).backgroundColor;
-    arrayChosenColours[element.id] = color;
+    objectChosenColours[element.id] = color;
 }
 
-console.log(arrayChosenColours);
 
 const saveChosenColours = () => {
-    sessionStorage.setItem("chosenColours", JSON.stringify(arrayChosenColours));
+    sessionStorage.setItem("chosenColours", JSON.stringify(objectChosenColours));
     window.location.href = "./juego.html";
 }
+
+
+let chosenColours = JSON.parse(sessionStorage.getItem("chosenColours"));
+
+let arrayChosenColours = [];
+
+
+const changeColoursToArray = () => {
+
+    for (const property in chosenColours) {
+        arrayChosenColours.push(chosenColours[property]);
+    }
+}
+changeColoursToArray();
 
 
 // GAME
@@ -122,3 +134,47 @@ const howManyRows = () => {
         }
     }
 }
+
+
+// LEVEL
+
+window.addEventListener("load", ()=>(chosenLevel()));
+
+const chosenLevel = ()=>{
+
+    let level = document.getElementById("level");
+    let p = document.createElement("p");
+
+    if (selectedLevel == "beginnerRow"){
+        p.innerHTML = "LEVEL: beginner";
+        level.appendChild(p);
+    } else if (selectedLevel == "intermediateRow"){
+        p.innerHTML = "LEVEL: intermediate";
+        level.appendChild(p);
+    } else {
+        p.innerHTML = "LEVEL: advanced";
+        level.appendChild(p);
+    }
+};
+
+
+// CHOSEN COLOURS 
+
+window.addEventListener("load", ()=>(colourMiniSquares()));
+
+const colourMiniSquares = () => {
+
+    for(i = 0; i < arrayChosenColours.length; i++){
+        let miniSquare = document.getElementById(`miniSquare${i}`);
+        miniSquare.style.backgroundColor = arrayChosenColours[i];
+    }
+
+}
+
+        
+
+
+
+
+
+

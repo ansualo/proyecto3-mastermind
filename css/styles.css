@@ -83,9 +83,15 @@ body {
 
 /* GAME PAGE */
 
-.squareGame{
+.miniSquare{
     width: 1.5em;
     height: 1.5em;
+    margin-left: 1em;
+}
+
+.squareGame{
+    width: 2em;
+    height: 2em;
     border: 0.1em solid white;
 }
 
@@ -98,8 +104,8 @@ body {
 
 @media (min-width: 768px) {
     .squareGame{
-        width: 4em;
-        height: 4em;
+        width: 3em;
+        height: 3em;
         border: 0.1em solid white;
     }
 
@@ -109,4 +115,9 @@ body {
         border-radius: 50%;
         border: 0.1em solid white;
     }
+
+    #game{
+        padding-right: 10em;
+    }
+
 }
