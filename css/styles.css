@@ -80,3 +80,33 @@ body {
     border-radius: 1em;
 
 }
+
+/* GAME PAGE */
+
+.squareGame{
+    width: 2em;
+    height: 2em;
+    border: 0.1em solid white;
+}
+
+.circle{
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border: 0.1em solid white;
+}
+
+@media (min-width: 768px) {
+    .squareGame{
+        width: 4em;
+        height: 4em;
+        border: 0.1em solid white;
+    }
+
+    .circle{
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        border: 0.1em solid white;
+    }
+}
