@@ -110,6 +110,7 @@ body {
     width: 2em;
     height: 2em;
     border: 0.1em solid white;
+    margin: 0.3em;
 }
 
 .circle{
@@ -120,10 +121,17 @@ body {
 }
 
 @media (min-width: 768px) {
+    .miniSquare{
+        width: 2em;
+        height: 2em;
+        margin-left: 1em;
+    }
+
     .squareGame{
         width: 3em;
         height: 3em;
         border: 0.1em solid white;
+        margin: 0.5em;
     }
 
     .circle{
@@ -134,7 +142,6 @@ body {
     }
 
     #game{
-        padding-right: 10em;
+        margin-right: 22em;
     }
-
 }

@@ -1,6 +1,6 @@
 // GUARDAR NOMBRE JUGADOR
 
-const guardadoNombre = () => {
+const saveName = () => {
 
     let valor = document.getElementById("playerName").value;
     sessionStorage.setItem("name", valor);
@@ -99,7 +99,7 @@ const createRows = () => {
 
     for(let i=0; i < 4; i++){
         let eachSquare = document.createElement("div");
-        eachSquare.className = "squareGame m-2";
+        eachSquare.className = "squareGame";
         squaresDiv.appendChild(eachSquare)
     }
 
