@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MASTERMIND</title>
+    <!-- Font Bungee Shade -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
     <!-- Font Concert One -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,17 +21,27 @@
 </head>
 <body>
 
-    <div class="container-fluid backgroundHome">
+    <div class="container-fluid backgroundHome m-0 p-0">
 
-        <div class="row h-50">
-            <h1 class="col-12 p-0 m-0 d-flex justify-content-center align-items-center display-1 logo">mastermind</h1>
-        </div>
-        <div class="row h-50 d-flex align-items-center">
-            <div class="col-12 col-lg-6 h-25 d-flex justify-content-center">
-                <a href="pages/niveles.html" class="col-10 col-lg-6 homeButton">PLAY</a>
+        <div class="row row-cols-1 row-cols-lg-3 h-75 m-0 p-0 d-flex ">
+            <div class="col d-none d-lg-block">
+                <img src="./img/stars.gif" alt="stars" class="stars"></img>
             </div>
-            <div class="col-12 col-lg-6 h-25 d-flex justify-content-center">
-                <a href="pages/about.html" class="col-10 col-lg-6 homeButton">ABOUT</a>
+            <div class="col d-flex flex-column justify-content-center align-items-center text-light display-1">
+              <p class="logo">master</p>
+              <p class="logo">mind</p>  
+            </div>
+            <div class="col d-none d-lg-block">
+                <img src="./img/stars.gif" alt="stars"></img>
+            </div>
+        </div>
+
+        <div class="row h-25 m-0 p-0 d-flex align-items-center justify-content-center">
+            <div class="col-12 col-lg-4 h-25 d-flex justify-content-center">
+                <a href="pages/niveles.html" class="col-10 col-lg-8 homeButton">PLAY</a>
+            </div>
+            <div class="col-12 col-lg-4 h-25 d-flex justify-content-center">
+                <a href="pages/about.html" class="col-10 col-lg-8 homeButton">ABOUT</a>
             </div>
         </div>
     </div>

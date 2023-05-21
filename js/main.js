@@ -171,8 +171,6 @@ const colourMiniSquares = () => {
 
 }
 
-        
-
 
 
 
