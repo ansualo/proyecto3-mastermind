@@ -48,12 +48,16 @@
             <div class="col h4 m-0" id="level"></div>
             <div class="col d-flex">
                 <h4>COLOURS</h4>
-                <div class="miniSquare" id="miniSquare0"></div>
-                <div class="miniSquare" id="miniSquare1"></div>
-                <div class="miniSquare" id="miniSquare2"></div>
-                <div class="miniSquare" id="miniSquare3"></div>
-                <div class="miniSquare" id="miniSquare4"></div>
-                <div class="miniSquare" id="miniSquare5"></div>
+                <div class="miniSquare" id="0" onclick="addColour('0'); paintSquares()"></div>
+                <div class="miniSquare" id="1" onclick="addColour('1'); paintSquares()"></div>
+                <div class="miniSquare" id="2" onclick="addColour('2'); paintSquares()"></div>
+                <div class="miniSquare" id="3" onclick="addColour('3'); paintSquares()"></div>
+                <div class="miniSquare" id="4" onclick="addColour('4'); paintSquares()"></div>
+                <div class="miniSquare" id="5" onclick="addColour('5'); paintSquares()"></div>
+            </div>
+            <div>
+                <div class="btn btn-outline-secondary m-1" type="button" onclick="removeFromArray()">remove</div>
+                <button class="btn btn-outline-secondary m-1" type="button">check</button>
             </div>
         </div>
 
