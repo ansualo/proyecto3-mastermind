@@ -179,20 +179,20 @@ const colourMiniSquares = () => {
 
 // RANDOM ANSWER
 
-let randomArray = [];
+let randomAnswerArray = [];
 
 const correctAnswer = () => {
 
     for (i = 0; i < 4; i++) {
 
         random = Math.floor(Math.random() * (arrayChosenColours.length));
-        randomArray.push(arrayChosenColours[random]);
+        randomAnswerArray.push(arrayChosenColours[random]);
     }
 }
 
 correctAnswer();
 
-console.log(randomArray);
+console.log(randomAnswerArray);
 
 
 // ANSWER IN THE SQUARES
@@ -203,13 +203,11 @@ const answerInSquares = () => {
     let arrayAnswer = Array.from(answer);
 
     for (i = 0; i < 4; i++){
-        arrayAnswer[i].style.backgroundColor = randomArray[i]
+        arrayAnswer[i].style.backgroundColor = randomAnswerArray[i]
     }
 }
 
 answerInSquares();
-
-
 
 
 
@@ -235,17 +233,17 @@ console.log(arrayChosenColours);
 
 
 
-newArray = [];
+let chosenColoursInRow = [];
 
 // Add colours to the new array
 const addColour = (id) => {
     let whichColour = document.getElementById(id);
     let colour = arrayChosenColours[id];
-    newArray.push(colour);
+    chosenColoursInRow.push(colour);
 }
 
 
-console.log(newArray);
+console.log(chosenColoursInRow);
 
 
 
@@ -255,7 +253,7 @@ const paintSquares = () => {
     for (let i = 0; i < 4; i++) {
 
         let squareIwantToPaint = document.getElementById(`squareGame${i}`);
-        let colourChosen = newArray[i];
+        let colourChosen = chosenColoursInRow[i];
         squareIwantToPaint.style.backgroundColor = colourChosen;
     }
 };
@@ -263,10 +261,35 @@ const paintSquares = () => {
 
 
 // REMOVE NO FUNCIONA
-// const removeFromArray = (newArray) => {
-//    newArray.pop();
-//    console.log(newArray);
+// const removeFromArray = () => {
+//    chosenColoursInRow.pop();
+//    console.log(chosenColoursInRow);
 // };
+
+
+
+// COMPARE chosenColoursInRow with randomAnswerArray
+
+
+
+const compareColours = () => {
+
+    let i = 0;
+    let successful = 0;
+
+    randomAnswerArray.map (element => {
+    
+        if (element === chosenColoursInRow[i]){
+            console.log("acertado");
+            successful ++
+            i++;
+        } else {
+            console.log("no acertado");
+        }
+    })
+    
+    console.log(`You got ${successful} correct colours`);
+}
 
 
 
