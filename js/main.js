@@ -177,6 +177,45 @@ const colourMiniSquares = () => {
 }
 
 
+// RANDOM ANSWER
+
+let randomArray = [];
+
+const correctAnswer = () => {
+
+    for (i = 0; i < 4; i++) {
+
+        random = Math.floor(Math.random() * (arrayChosenColours.length));
+        randomArray.push(arrayChosenColours[random]);
+    }
+}
+
+correctAnswer();
+
+console.log(randomArray);
+
+
+// ANSWER IN THE SQUARES
+
+const answerInSquares = () => {
+
+    let answer = document.getElementsByClassName("answer");
+    let arrayAnswer = Array.from(answer);
+
+    for (i = 0; i < 4; i++){
+        arrayAnswer[i].style.backgroundColor = randomArray[i]
+    }
+}
+
+answerInSquares();
+
+
+
+
+
+
+
+
 // ADD IDS TO THE SQUARES
 window.addEventListener("load", () => (addIdToSquares()));
 
@@ -191,9 +230,9 @@ const addIdToSquares = () => {
     }
 }
 
-
-
 console.log(arrayChosenColours);
+
+
 
 
 newArray = [];
@@ -209,9 +248,11 @@ const addColour = (id) => {
 console.log(newArray);
 
 
+
+// paint the squares 
 const paintSquares = () => {
 
-    for (let i = 0; i < 4; i++){
+    for (let i = 0; i < 4; i++) {
 
         let squareIwantToPaint = document.getElementById(`squareGame${i}`);
         let colourChosen = newArray[i];
@@ -220,6 +261,12 @@ const paintSquares = () => {
 };
 
 
+
+// REMOVE NO FUNCIONA
+// const removeFromArray = (newArray) => {
+//    newArray.pop();
+//    console.log(newArray);
+// };
 
 
 
