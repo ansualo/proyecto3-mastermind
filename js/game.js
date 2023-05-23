@@ -5,8 +5,8 @@ let board = document.getElementById("game");
 const createRows = () => {
 
     let mainCol = document.createElement("div");
-    mainCol.className = "col-12 d-flex";
-
+    mainCol.className = "col-12 d-flex eachRow";
+  
     let squaresDiv = document.createElement("div");
     squaresDiv.className = "d-flex justify-content-evenly";
 
@@ -30,25 +30,31 @@ const createRows = () => {
     board.appendChild(mainCol);
 };
 
+let howMany = 0;
 
 const howManyRows = () => {
+
 
     if (selectedLevel == "beginnerRow") {
         for (let i = 0; i < 10; i++) {
             createRows();
         }
+        return howMany = 10;
     } else if (selectedLevel == "intermediateRow") {
         for (let i = 0; i < 8; i++) {
             createRows();
         }
+        return howMany = 8;
     } else {
         for (let i = 0; i < 6; i++) {
             createRows();
         }
+        return howMany = 6;
     }
 }
 
 howManyRows();
+
 
 
 // LEVEL
@@ -100,8 +106,6 @@ const correctAnswer = () => {
 
 correctAnswer();
 
-console.log(randomAnswerArray);
-
 
 // ANSWER IN THE SQUARES
 
@@ -118,17 +122,36 @@ const answerInSquares = () => {
 answerInSquares();
 
 
-// ADD IDS TO THE SQUARES
+// ADD IDS TO THE ROWS
+
+let rows = document.getElementsByClassName("eachRow");
+let arrayRows = Array.from(rows);
+
+const addIdToRows = () => {
+
+    for (let i = 0; i < arrayRows.length; i++) {
+        let element = arrayRows[i];
+        element.id = `eachRow${i}`;
+    }
+}
+
 
 const addIdToSquares = () => {
 
     let squares = document.getElementsByClassName("squareGame");
     let arraySquares = Array.from(squares);
 
-    for (let i = 0; i < arraySquares.length; i++) {
-        let element = arraySquares[i];
-        element.id = `squareGame${i}`;
-    }
+
+    for (let j = 0; j < howMany; j++){
+
+        for (let i = 0; i < 4; i++) {
+
+            let index = j * 4 + i;
+            let element = arraySquares[index];
+            element.id = `row${j}-square${i}`;
+        }
+    };
+    
 }
 
 // ADD IDS TO THE CIRCLES
@@ -138,12 +161,21 @@ const addIdToCircles = () => {
     let circles = document.getElementsByClassName("circle");
     let arrayCircles = Array.from(circles);
 
-    for (let i = 0; i < arrayCircles.length; i++) {
-        let element = arrayCircles[i];
-        element.id = `circle${i}`;
-    }
+
+    for (let j = 0; j < howMany; j++){
+
+        for (let i = 0; i < 4; i++) {
+
+            let index = j * 4 + i;
+            let element = arrayCircles[index];
+            element.id = `row${j}-circle${i}`;
+        }
+    };
+
 }
 
+
+addIdToRows();
 addIdToSquares();
 addIdToCircles();
 
@@ -163,15 +195,32 @@ console.log(chosenColoursInRow);
 
 
 
+
 // paint the squares 
+
+let j = 0;
+
+const check = () => {
+
+    j++;
+    chosenColoursInRow.length = "";
+
+    console.log(chosenColoursInRow);
+    console.log(j);
+}
+
+
+
 const paintSquares = () => {
 
-    for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 4; i++) {
 
-        let squareIwantToPaint = document.getElementById(`squareGame${i}`);
-        let colourChosen = chosenColoursInRow[i];
-        squareIwantToPaint.style.backgroundColor = colourChosen;
-    }
+            let squareIwantToPaint = document.getElementById(`row${j}-square${i}`);
+            let colourChosen = chosenColoursInRow[i];
+            squareIwantToPaint.style.backgroundColor = colourChosen;
+            
+        }
+    
 };
 
 
@@ -207,14 +256,30 @@ const compareColours = () => {
 };
 
 
-// paint the circles 
+// PAINT THE CIRCLES
 
 const paintCircles = () => {
 
     for (let i = 0; i < 4; i++) {
-        let circleIwantToPaint = document.getElementById(`circle${i}`);
+        let circleIwantToPaint = document.getElementById(`row${j}-circle${i}`);
         let paintAnswer = arrayCircles[i];
         circleIwantToPaint.style.backgroundColor = paintAnswer;
     }
 };
 
+
+const winner = () => {
+
+   let stringArrayCircles = arrayCircles.toString();
+
+   let correctAnswer = "rgb(255, 0, 0),rgb(255, 0, 0),rgb(255, 0, 0),rgb(255, 0, 0)";
+
+   console.log(stringArrayCircles)
+
+    if(stringArrayCircles === correctAnswer){
+
+        alert("congratulations");
+
+    };
+
+}
