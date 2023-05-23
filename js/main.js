@@ -15,7 +15,7 @@ const saveName = () => {
 // resultado.innerHTML = `Hola ${sessionStorage.getItem("name")}`;
 
 
-// HIDDEN ROWS 
+// HIDDEN COLOUR ROWS 
 
 // save level
 const saveLevelBeginner = () => {
@@ -43,14 +43,15 @@ window.onload = (event) => {
 
 // COLOR PICKER
 
-window.addEventListener("load", startup);
+window.addEventListener("load", () => startup());
 
 let colorPicker = document.getElementsByClassName("colorpicker");
 let arrayColorPicker = Array.from(colorPicker);
 let objectChosenColours = {};
 
 
-function startup(event) {
+
+const startup = () => {
     arrayColorPicker.map(
         (element) => {
             element.value = "#8a2be2";
@@ -75,6 +76,7 @@ const saveChosenColours = () => {
 
 
 let chosenColours = JSON.parse(sessionStorage.getItem("chosenColours"));
+
 let arrayChosenColours = [];
 
 const changeColoursToArray = () => {
@@ -84,216 +86,8 @@ const changeColoursToArray = () => {
     }
 }
 
+
 changeColoursToArray();
-
-
-// GAME
-
-window.addEventListener("load", () => howManyRows());
-
-let board = document.getElementById("game");
-
-const createRows = () => {
-
-    let mainCol = document.createElement("div");
-    mainCol.className = "col-12 d-flex";
-
-    let squaresDiv = document.createElement("div");
-    squaresDiv.className = "d-flex justify-content-evenly";
-
-    for (let i = 0; i < 4; i++) {
-        let eachSquare = document.createElement("div");
-        eachSquare.className = "squareGame";
-        squaresDiv.appendChild(eachSquare)
-    }
-
-    let circlesDiv = document.createElement("div");
-    circlesDiv.className = "d-flex justify-content-evenly align-items-center";
-
-    for (let i = 0; i < 4; i++) {
-        let eachCircle = document.createElement("div");
-        eachCircle.className = "circle m-1";
-        circlesDiv.appendChild(eachCircle)
-    }
-
-    mainCol.appendChild(squaresDiv);
-    mainCol.appendChild(circlesDiv);
-    board.appendChild(mainCol);
-};
-
-
-const howManyRows = () => {
-
-    if (selectedLevel == "beginnerRow") {
-        for (let i = 0; i < 10; i++) {
-            createRows();
-        }
-    } else if (selectedLevel == "intermediateRow") {
-        for (let i = 0; i < 8; i++) {
-            createRows();
-        }
-    } else {
-        for (let i = 0; i < 6; i++) {
-            createRows();
-        }
-    }
-}
-
-
-
-// LEVEL
-
-window.addEventListener("load", () => (chosenLevel()));
-
-const chosenLevel = () => {
-
-    let level = document.getElementById("level");
-    let p = document.createElement("p");
-
-    if (selectedLevel == "beginnerRow") {
-        p.innerHTML = "LEVEL: beginner";
-        level.appendChild(p);
-    } else if (selectedLevel == "intermediateRow") {
-        p.innerHTML = "LEVEL: intermediate";
-        level.appendChild(p);
-    } else {
-        p.innerHTML = "LEVEL: advanced";
-        level.appendChild(p);
-    }
-};
-
-
-// CHOSEN COLOURS 
-
-window.addEventListener("load", () => (colourMiniSquares()));
-
-const colourMiniSquares = () => {
-
-    for (i = 0; i < arrayChosenColours.length; i++) {
-        let miniSquare = document.getElementById(`${i}`);
-        miniSquare.style.backgroundColor = arrayChosenColours[i];
-    }
-
-}
-
-
-// RANDOM ANSWER
-
-let randomAnswerArray = [];
-
-const correctAnswer = () => {
-
-    for (i = 0; i < 4; i++) {
-
-        random = Math.floor(Math.random() * (arrayChosenColours.length));
-        randomAnswerArray.push(arrayChosenColours[random]);
-    }
-}
-
-correctAnswer();
-
-console.log(randomAnswerArray);
-
-
-// ANSWER IN THE SQUARES
-
-const answerInSquares = () => {
-
-    let answer = document.getElementsByClassName("answer");
-    let arrayAnswer = Array.from(answer);
-
-    for (i = 0; i < 4; i++){
-        arrayAnswer[i].style.backgroundColor = randomAnswerArray[i]
-    }
-}
-
-answerInSquares();
-
-
-
-
-
-
-// ADD IDS TO THE SQUARES
-window.addEventListener("load", () => (addIdToSquares()));
-
-const addIdToSquares = () => {
-
-    let squares = document.getElementsByClassName("squareGame");
-    let arraySquares = Array.from(squares);
-
-    for (let i = 0; i < arraySquares.length; i++) {
-        let element = arraySquares[i];
-        element.id = `squareGame${i}`;
-    }
-}
-
-console.log(arrayChosenColours);
-
-
-
-
-let chosenColoursInRow = [];
-
-// Add colours to the new array
-const addColour = (id) => {
-    let whichColour = document.getElementById(id);
-    let colour = arrayChosenColours[id];
-    chosenColoursInRow.push(colour);
-}
-
-
-console.log(chosenColoursInRow);
-
-
-
-// paint the squares 
-const paintSquares = () => {
-
-    for (let i = 0; i < 4; i++) {
-
-        let squareIwantToPaint = document.getElementById(`squareGame${i}`);
-        let colourChosen = chosenColoursInRow[i];
-        squareIwantToPaint.style.backgroundColor = colourChosen;
-    }
-};
-
-
-
-// REMOVE NO FUNCIONA
-// const removeFromArray = () => {
-//    chosenColoursInRow.pop();
-//    console.log(chosenColoursInRow);
-// };
-
-
-
-// COMPARE chosenColoursInRow with randomAnswerArray
-
-
-
-const compareColours = () => {
-
-    let i = 0;
-    let successful = 0;
-
-    randomAnswerArray.map (element => {
-    
-        if (element === chosenColoursInRow[i]){
-            console.log("acertado");
-            successful ++
-            i++;
-        } else {
-            console.log("no acertado");
-        }
-    })
-    
-    console.log(`You got ${successful} correct colours`);
-}
-
-
-
-
 
 
 
