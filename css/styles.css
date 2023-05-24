@@ -55,7 +55,8 @@ body {
 
 @keyframes slidebg {
     to { background-position:20vw; }
-  }
+}
+
 
 /* LEVELS PAGE */
 
@@ -91,12 +92,12 @@ body {
 
 /* ABOUT PAGE */
 
-
 .borderAbout{
     border: 0.3em groove white;
     border-radius: 1em;
 
 }
+
 
 /* GAME PAGE */
 

@@ -188,53 +188,61 @@ const addColour = (id) => {
     let colour = arrayChosenColours[id];
     chosenColoursInRow.push(colour);
     paintSquares();
-
 }
 
 // paint the squares using the index of the array
 
 let j = 0;
+let squareIwantToPaint;
 
 const paintSquares = () => {
 
         for (let i = 0; i < 4; i++) {
-            let squareIwantToPaint = document.getElementById(`row${j}-square${i}`);
+            squareIwantToPaint = document.getElementById(`row${j}-square${i}`);
             let colourChosen = chosenColoursInRow[i];
             squareIwantToPaint.style.backgroundColor = colourChosen;
         }
 }
 
 
+// REMOVE CHOSEN COLOUS FROM THE ARRAY
+
+const removeFromArray = () => {
+
+    index = chosenColoursInRow.length - 1;
+    chosenColoursInRow.pop();
+
+    if(chosenColoursInRow.length <= 4){
+        squareIwantToPaint = document.getElementById(`row${j}-square${index}`);
+        squareIwantToPaint.style.backgroundColor = "";
+    }
+
+};
 
 
-// REMOVE NO FUNCIONA
-// const removeFromArray = () => {
-//    chosenColoursInRow.pop();
-//    console.log(chosenColoursInRow);
-// };
-
-
-
-// COMPARE chosenColoursInRow WITH randomAnswerArray //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! LIMITAR EL NUMERO DE CLICKS 
+// COMPARE THE CHOSEN COLOURS WITH THE CORRECT ANSWER
 // compare arrays and push into a new array if the circle needs to be black(red) or white
 
 let arrayCircles = [];
 
 const compareColours = () => {
+    if (chosenColoursInRow.length >= 4){
 
-   arrayCircles = chosenColoursInRow.map((element, index) => {
+        arrayCircles = chosenColoursInRow.map((element, index) => {
 
-        if (element === randomAnswerArray[index]) {
-            return "rgb(255, 0, 0)";
-        } else if (randomAnswerArray.includes(element)){
-            return "rgb(255, 255, 255)";
-        } else {
-            return "";
-        }
-    })
+            if (element === randomAnswerArray[index]) {
+                return "rgb(255, 0, 0)";
+            } else if (randomAnswerArray.includes(element)){
+                return "rgb(255, 255, 255)";
+            } else {
+                return "";
+            }
+        })
 
-    paintCircles();
-    check();
+        paintCircles();
+        check();
+
+    } 
 }
 
 // PAINT THE CIRCLES
