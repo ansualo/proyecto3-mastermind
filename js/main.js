@@ -15,9 +15,8 @@ const saveName = () => {
 // resultado.innerHTML = `Hola ${sessionStorage.getItem("name")}`;
 
 
-// HIDDEN COLOUR ROWS 
+// SAVE LEVEL
 
-// save level
 const saveLevelBeginner = () => {
     sessionStorage.setItem("level", "beginnerRow");
     window.location.href = "./colores.html";
@@ -31,14 +30,15 @@ const saveLevelAdvanced = () => {
     window.location.href = "./colores.html";
 }
 
-// shows the correct row depending on the level
+
+// SHOWS THE CORRECT COLOUR ROW DEPENDING ON THE LEVEL
 
 let selectedLevel = sessionStorage.getItem("level");
 let selected = document.getElementById(selectedLevel);
 
 window.onload = (event) => {
     selected.style.display = "flex";
-};
+}
 
 
 // COLOR PICKER
@@ -48,9 +48,10 @@ window.addEventListener("load", () => startup());
 let colorPicker = document.getElementsByClassName("colorpicker");
 let arrayColorPicker = Array.from(colorPicker);
 let objectChosenColours = {};
+let arrayChosenColours = [];
 
 
-
+// collect all colour pickers in the same array
 const startup = () => {
     arrayColorPicker.map(
         (element) => {
@@ -61,6 +62,7 @@ const startup = () => {
     )
 }
 
+// paint each square with the selected colour
 const updateSquare = (event, element) => {
     let colorSquare = document.getElementById(`square${element.id}`);
     colorSquare.style.backgroundColor = event.target.value;
@@ -68,24 +70,21 @@ const updateSquare = (event, element) => {
     objectChosenColours[element.id] = color;
 }
 
-
+//save colours in session storage
 const saveChosenColours = () => {
     sessionStorage.setItem("chosenColours", JSON.stringify(objectChosenColours));
     window.location.href = "./juego.html";
 }
 
-
 let chosenColours = JSON.parse(sessionStorage.getItem("chosenColours"));
 
-let arrayChosenColours = [];
 
+// change the object into an array taking only the colours
 const changeColoursToArray = () => {
-
     for (const property in chosenColours) {
         arrayChosenColours.push(chosenColours[property]);
     }
 }
-
 
 changeColoursToArray();
 

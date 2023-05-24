@@ -1,8 +1,8 @@
-// CREATE BOARD
-
-let board = document.getElementById("game");
+// CREATE ROWS IN BOARD
 
 const createRows = () => {
+
+    let board = document.getElementById("game");
 
     let mainCol = document.createElement("div");
     mainCol.className = "col-12 d-flex eachRow";
@@ -30,11 +30,13 @@ const createRows = () => {
     board.appendChild(mainCol);
 };
 
+
+// DECIDE HOW MANY ROWS WE NEED IN THE BOARD DEPENDING ON THE LEVEL
+
 let howMany = 0;
 
 const howManyRows = () => {
-
-
+    
     if (selectedLevel == "beginnerRow") {
         for (let i = 0; i < 10; i++) {
             createRows();
@@ -56,91 +58,24 @@ const howManyRows = () => {
 howManyRows();
 
 
-
-// LEVEL
-
-const chosenLevel = () => {
-
-    let level = document.getElementById("level");
-    let p = document.createElement("p");
-
-    if (selectedLevel == "beginnerRow") {
-        p.innerHTML = "LEVEL: beginner";
-        level.appendChild(p);
-    } else if (selectedLevel == "intermediateRow") {
-        p.innerHTML = "LEVEL: intermediate";
-        level.appendChild(p);
-    } else {
-        p.innerHTML = "LEVEL: advanced";
-        level.appendChild(p);
-    }
-};
-
-chosenLevel();
-
-// CHOSEN COLOURS 
-
-const colourMiniSquares = () => {
-
-    for (i = 0; i < arrayChosenColours.length; i++) {
-        let miniSquare = document.getElementById(`${i}`);
-        miniSquare.style.backgroundColor = arrayChosenColours[i];
-    }
-
-}
-
-colourMiniSquares();
-
-// RANDOM ANSWER
-
-let randomAnswerArray = [];
-
-const correctAnswer = () => {
-
-    for (i = 0; i < 4; i++) {
-
-        random = Math.floor(Math.random() * (arrayChosenColours.length));
-        randomAnswerArray.push(arrayChosenColours[random]);
-    }
-}
-
-correctAnswer();
-
-
-// ANSWER IN THE SQUARES
-
-const answerInSquares = () => {
-
-    let answer = document.getElementsByClassName("answer");
-    let arrayAnswer = Array.from(answer);
-
-    for (i = 0; i < 4; i++) {
-        arrayAnswer[i].style.backgroundColor = randomAnswerArray[i]
-    }
-}
-
-answerInSquares();
-
-
 // ADD IDS TO THE ROWS
 
 let rows = document.getElementsByClassName("eachRow");
 let arrayRows = Array.from(rows);
 
 const addIdToRows = () => {
-
     for (let i = 0; i < arrayRows.length; i++) {
         let element = arrayRows[i];
         element.id = `eachRow${i}`;
     }
 }
 
+// ADD IDS TO THE SQUARES
 
 const addIdToSquares = () => {
 
     let squares = document.getElementsByClassName("squareGame");
     let arraySquares = Array.from(squares);
-
 
     for (let j = 0; j < howMany; j++){
 
@@ -151,7 +86,6 @@ const addIdToSquares = () => {
             element.id = `row${j}-square${i}`;
         }
     };
-    
 }
 
 // ADD IDS TO THE CIRCLES
@@ -174,54 +108,102 @@ const addIdToCircles = () => {
 
 }
 
-
 addIdToRows();
 addIdToSquares();
 addIdToCircles();
 
 
+// REMINDER OF THE CHOSEN LEVEL
+
+const chosenLevel = () => {
+
+    let level = document.getElementById("level");
+    let p = document.createElement("p");
+
+    if (selectedLevel == "beginnerRow") {
+        p.innerHTML = "LEVEL: beginner";
+        level.appendChild(p);
+    } else if (selectedLevel == "intermediateRow") {
+        p.innerHTML = "LEVEL: intermediate";
+        level.appendChild(p);
+    } else {
+        p.innerHTML = "LEVEL: advanced";
+        level.appendChild(p);
+    }
+};
+
+chosenLevel();
+
+// REMINDER OF THE CHOSEN COLOURS 
+
+const colourMiniSquares = () => {
+
+    for (i = 0; i < arrayChosenColours.length; i++) {
+        let miniSquare = document.getElementById(`${i}`);
+        miniSquare.style.backgroundColor = arrayChosenColours[i];
+    }
+}
+
+colourMiniSquares();
+
+
+// CREATE THE RANDOM ANSWER
+
+let randomAnswerArray = [];
+
+const correctAnswer = () => {
+
+    for (i = 0; i < 4; i++) {
+        random = Math.floor(Math.random() * (arrayChosenColours.length));
+        randomAnswerArray.push(arrayChosenColours[random]);
+    }
+}
+
+correctAnswer();
+
+
+// PAINT THE ANSWER IN THE SQUARES -------------------------------------------------------REMOVE??????????
+
+const answerInSquares = () => {
+
+    let answer = document.getElementsByClassName("answer");
+    let arrayAnswer = Array.from(answer);
+
+    for (i = 0; i < 4; i++) {
+        arrayAnswer[i].style.backgroundColor = randomAnswerArray[i]
+    }
+}
+
+answerInSquares();
+
+
+
+
+// PAINT THE SQUARES WITH OUR GUESS COLOURS 
 
 let chosenColoursInRow = [];
 
-// Add colours to the new array
+// add the colour to the array (clicking the mini squares)
 const addColour = (id) => {
-    let whichColour = document.getElementById(id);
     let colour = arrayChosenColours[id];
     chosenColoursInRow.push(colour);
+    paintSquares();
+
 }
 
-
-console.log(chosenColoursInRow);
-
-
-
-
-// paint the squares 
+// paint the squares using the index of the array
 
 let j = 0;
-
-const check = () => {
-
-    j++;
-    chosenColoursInRow.length = "";
-
-    console.log(chosenColoursInRow);
-    console.log(j);
-}
-
-
 
 const paintSquares = () => {
 
         for (let i = 0; i < 4; i++) {
-
             let squareIwantToPaint = document.getElementById(`row${j}-square${i}`);
             let colourChosen = chosenColoursInRow[i];
             squareIwantToPaint.style.backgroundColor = colourChosen;
-            
         }
-    
-};
+}
+
 
 
 
@@ -233,10 +215,8 @@ const paintSquares = () => {
 
 
 
-// COMPARE chosenColoursInRow with randomAnswerArray
-
-
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! LIMITAR EL NUMERO DE CLICKS 
+// COMPARE chosenColoursInRow WITH randomAnswerArray //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! LIMITAR EL NUMERO DE CLICKS 
+// compare arrays and push into a new array if the circle needs to be black(red) or white
 
 let arrayCircles = [];
 
@@ -252,34 +232,41 @@ const compareColours = () => {
             return "";
         }
     })
-    console.log(arrayCircles);
-};
 
+    paintCircles();
+    check();
+}
 
 // PAINT THE CIRCLES
 
 const paintCircles = () => {
-
     for (let i = 0; i < 4; i++) {
         let circleIwantToPaint = document.getElementById(`row${j}-circle${i}`);
         let paintAnswer = arrayCircles[i];
         circleIwantToPaint.style.backgroundColor = paintAnswer;
     }
-};
+}
 
+// CHANGE ROWS AND EMPTY THE ARRAY OF COLOURS
+
+const check = () => {
+
+    if (j < 9) {
+        j++;
+        chosenColoursInRow.length = "";
+    } else {
+        window.location.href = "./resultado.html";
+    }
+}
+
+// CHECK IF I HAVE WON
 
 const winner = () => {
 
    let stringArrayCircles = arrayCircles.toString();
-
    let correctAnswer = "rgb(255, 0, 0),rgb(255, 0, 0),rgb(255, 0, 0),rgb(255, 0, 0)";
 
-   console.log(stringArrayCircles)
-
     if(stringArrayCircles === correctAnswer){
-
-        alert("congratulations");
-
-    };
-
+        window.location.href = "./resultado.html";
+    }
 }

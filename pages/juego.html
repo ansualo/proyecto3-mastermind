@@ -45,30 +45,38 @@
         class="container-fluid background d-flex flex-column flex-md-row justify-content-center align-items-center text-light">
 
         <div class="row p-0 m-0 d-flex flex-column">
+
+            <!-- REMINDER OF LEVEL -->
             <div class="col h4 m-0" id="level"></div>
+
+            <!-- REMINDER OF CHOSEN COLOURS -->
             <div class="col d-flex">
                 <h4>COLOURS</h4>
-                <div class="miniSquare" id="0" onclick="addColour('0'); paintSquares()"></div>
-                <div class="miniSquare" id="1" onclick="addColour('1'); paintSquares()"></div>
-                <div class="miniSquare" id="2" onclick="addColour('2'); paintSquares()"></div>
-                <div class="miniSquare" id="3" onclick="addColour('3'); paintSquares()"></div>
-                <div class="miniSquare" id="4" onclick="addColour('4'); paintSquares()"></div>
-                <div class="miniSquare" id="5" onclick="addColour('5'); paintSquares()"></div>
+                <div class="miniSquare" id="0" onclick="addColour('0')"></div>
+                <div class="miniSquare" id="1" onclick="addColour('1')"></div>
+                <div class="miniSquare" id="2" onclick="addColour('2')"></div>
+                <div class="miniSquare" id="3" onclick="addColour('3')"></div>
+                <div class="miniSquare" id="4" onclick="addColour('4')"></div>
+                <div class="miniSquare" id="5" onclick="addColour('5')"></div>
             </div>
+
+            <!-- ANSWER -->
             <div class="col d-flex m-1">
                 <h4>ANSWER</h4>
                 <div class="miniSquare answer" id="answer0"></div>
                 <div class="miniSquare answer" id="answer1"></div>
                 <div class="miniSquare answer" id="answer2"></div>
                 <div class="miniSquare answer" id="answer3"></div>
-
             </div>
+
+            <!-- BUTTONS -->
             <div>
                 <div class="btn btn-outline-secondary m-1" type="button" onclick="removeFromArray()">remove</div>
-                <button class="btn btn-outline-secondary m-1" type="button" id="check" onclick="compareColours(); paintCircles(); check(); winner()">check</button>
+                <button class="btn btn-outline-secondary m-1" type="button" id="check" onclick="compareColours(); winner()">check</button>
             </div>
         </div>
 
+        <!-- BOARD -->
         <div class="row flex-column" id="game"></div>
 
     </div>
@@ -81,4 +89,4 @@
     <script src="../js/game.js"></script>
 </body>
 
-</html>
+</html
