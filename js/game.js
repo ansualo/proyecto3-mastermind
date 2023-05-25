@@ -164,17 +164,17 @@ correctAnswer();
 
 // PAINT THE ANSWER IN THE SQUARES -------------------------------------------------------REMOVE??????????
 
-const answerInSquares = () => {
+// const answerInSquares = () => {
 
-    let answer = document.getElementsByClassName("answer");
-    let arrayAnswer = Array.from(answer);
+//     let answer = document.getElementsByClassName("answer");
+//     let arrayAnswer = Array.from(answer);
 
-    for (i = 0; i < 4; i++) {
-        arrayAnswer[i].style.backgroundColor = randomAnswerArray[i]
-    }
-}
+//     for (i = 0; i < 4; i++) {
+//         arrayAnswer[i].style.backgroundColor = randomAnswerArray[i]
+//     }
+// }
 
-answerInSquares();
+// answerInSquares();
 
 
 
@@ -263,7 +263,7 @@ const check = () => {
         j++;
         chosenColoursInRow.length = "";
     } else {
-        window.location.href = "./resultado.html";
+        window.location.href = "./result.html";
     }
 }
 
@@ -275,6 +275,7 @@ const winner = () => {
    let correctAnswer = "rgb(255, 0, 0),rgb(255, 0, 0),rgb(255, 0, 0),rgb(255, 0, 0)";
 
     if(stringArrayCircles === correctAnswer){
-        window.location.href = "./resultado.html";
+        // window.location.href = "./result.html";
+        alert("congratulations");
     }
 }

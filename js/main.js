@@ -19,15 +19,15 @@ const saveName = () => {
 
 const saveLevelBeginner = () => {
     sessionStorage.setItem("level", "beginnerRow");
-    window.location.href = "./colores.html";
+    window.location.href = "./colours.html";
 }
 const saveLevelIntermediate = () => {
     sessionStorage.setItem("level", "intermediateRow");
-    window.location.href = "./colores.html";
+    window.location.href = "./colours.html";
 }
 const saveLevelAdvanced = () => {
     sessionStorage.setItem("level", "advancedRow");
-    window.location.href = "./colores.html";
+    window.location.href = "./colours.html";
 }
 
 
@@ -73,7 +73,7 @@ const updateSquare = (event, element) => {
 //save colours in session storage
 const saveChosenColours = () => {
     sessionStorage.setItem("chosenColours", JSON.stringify(objectChosenColours));
-    window.location.href = "./juego.html";
+    window.location.href = "./game.html";
 }
 
 let chosenColours = JSON.parse(sessionStorage.getItem("chosenColours"));
