@@ -257,12 +257,13 @@ const paintCircles = () => {
 
 // CHANGE ROWS AND EMPTY THE ARRAY OF COLOURS
 
-const check = () => {
+const check = (showWinnerPage) => {
 
-    if (j < 9) {
+    if (j < (howMany - 1)) {
         j++;
         chosenColoursInRow.length = "";
     } else {
+        sessionStorage.setItem("result", "loser");
         window.location.href = "./result.html";
     }
 }
@@ -270,15 +271,16 @@ const check = () => {
 
 // CHECK IF I HAVE WON
 
-const winner = () => {
+const winner = (showWinnerPage) => {
 
    let stringArrayCircles = arrayCircles.toString();
    let correctAnswer = "rgb(255, 0, 0),rgb(255, 0, 0),rgb(255, 0, 0),rgb(255, 0, 0)";
 
     if(stringArrayCircles === correctAnswer){
+
+        sessionStorage.setItem("result", "winner");
         window.location.href = "./result.html";
-        // let win = document.getElementById("winner");
-        // win.style.display = "flex";
-        // // alert("congratulations");
     }
 }
+
+

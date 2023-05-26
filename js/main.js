@@ -10,9 +10,10 @@ const saveName = () => {
     }
 }
 
-// Coger el nombre, todavia no esta bien
-// let resultado = document.getElementById("el id del ganador");
-// resultado.innerHTML = `Hola ${sessionStorage.getItem("name")}`;
+
+let name = sessionStorage.getItem("playerName")
+
+
 
 
 // SAVE LEVEL

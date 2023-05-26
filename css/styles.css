@@ -1,6 +1,7 @@
 
 *{
-    font-family: 'Concert One', cursive;
+    /* font-family: 'Concert One', cursive; */
+    font-family: 'Audiowide', cursive;
     background-color: black;
 }
 
@@ -26,11 +27,12 @@ body {
 }
 
 .logo, .bungeeFont{
-    font-family: 'Bungee Shade', cursive;
+    /* font-family: 'Bungee Shade', cursive; */
+    font-family: 'Audiowide', cursive;
 }
 
 .gameButton{
-    height: 3em;
+    height: 2em;
     border-radius: 1em;
     border: 0.1em solid white;
     color: white;
@@ -152,7 +154,7 @@ body {
 /* RESULTS PAGE */
 
 .letters{
-    font-size: 4em;
+    font-size: 4.5em;
 }
 
 @media (min-width: 768px) {
@@ -162,8 +164,7 @@ body {
     }
 }
 
-
-#winner{
+#loser, #winner{
     display: none;
 }
 
