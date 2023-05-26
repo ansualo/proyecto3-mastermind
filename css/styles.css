@@ -19,17 +19,18 @@ body {
     height: 10vh;
 }
 
-
 /* HOME PAGE */
 .backgroundHome {
     height: 100vh;
+    width: 100vw;
 }
 
 .logo, .bungeeFont{
     font-family: 'Bungee Shade', cursive;
 }
 
-.homeButton, .levelButton{
+.gameButton{
+    height: 3em;
     border-radius: 1em;
     border: 0.1em solid white;
     color: white;
@@ -146,3 +147,24 @@ body {
         margin-right: 22em;
     }
 }
+
+
+/* RESULTS PAGE */
+
+.letters{
+    font-size: 4em;
+}
+
+@media (min-width: 768px) {
+
+    .letters{
+        font-size: 8em;
+    }
+}
+
+
+#winner{
+    display: none;
+}
+
+
