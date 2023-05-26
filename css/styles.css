@@ -1,7 +1,6 @@
 
 *{
-    /* font-family: 'Concert One', cursive; */
-    font-family: 'Audiowide', cursive;
+    font-family: 'Electrolize', sans-serif;
     background-color: black;
 }
 
@@ -27,14 +26,15 @@ body {
 }
 
 .logo, .bungeeFont{
-    /* font-family: 'Bungee Shade', cursive; */
-    font-family: 'Audiowide', cursive;
+    font-family: 'Bungee Shade', cursive;
+    font-size: 1.6em;
+    z-index: 1;
 }
 
 .gameButton{
-    height: 2em;
+    height: 2.5em;
     border-radius: 1em;
-    border: 0.1em solid white;
+    border: 0.2em groove white;
     color: white;
     font-size: x-large;
     text-decoration: none;
@@ -44,7 +44,7 @@ body {
     cursor: pointer;
 }
 
-.homeButton:hover, .levelButton:hover{
+.gameButton:hover{
     background-image: linear-gradient( to right, 
         #131313,
         #333333,
@@ -98,7 +98,13 @@ body {
 .borderAbout{
     border: 0.3em groove white;
     border-radius: 1em;
+}
 
+.stars{
+    background-image: url(../img/stars.gif);
+    background-size: contain;
+    background-repeat: repeat;
+    background-position: center;
 }
 
 
