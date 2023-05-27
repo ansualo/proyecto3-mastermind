@@ -8,7 +8,7 @@ const createRows = () => {
     mainCol.className = "col-12 d-flex eachRow";
   
     let squaresDiv = document.createElement("div");
-    squaresDiv.className = "d-flex justify-content-evenly";
+    squaresDiv.className = "d-flex justify-content-evenly align-items-center";
 
     for (let i = 0; i < 4; i++) {
         let eachSquare = document.createElement("div");

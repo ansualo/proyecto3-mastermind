@@ -113,7 +113,7 @@ html body {
 
 .miniSquare{
     width: 3em;
-    height: 3em;
+    height: 2.5em;
     margin-left: 0.4em;
 }
 
@@ -133,8 +133,8 @@ html body {
 
 @media (min-width: 1025px) {
     .miniSquare{
-        width: 4em;
-        height: 3em;
+        width: 5.5em;
+        height: 4em;
         margin-left: 1em;
     }
 

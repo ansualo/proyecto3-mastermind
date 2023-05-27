@@ -42,15 +42,15 @@
     </nav>
 
     <div
-        class="container-fluid p-0 m-0 backgroundGame d-flex flex-column flex-lg-row align-items-center justify-content-evenly text-light">
+        class="container-fluid p-0 m-0 backgroundGame d-flex flex-column align-items-center flex-lg-row text-light">
 
-        <div class="row p-0 m-0 d-flex flex-column">
+        <div class="row h-100 col-lg-5 p-0 m-0 d-flex flex-column align-items-center">
 
             <!-- REMINDER OF LEVEL -->
-            <div class="col h4 mb-lg-5" id="level"></div>
+            <div class="col h4 col-lg-10 h-25 d-flex align-items-center" id="level"></div>
 
             <!-- REMINDER OF CHOSEN COLOURS -->
-            <div class="col d-flex mb-lg-5">
+            <div class="col col-lg-10 h-25 d-flex">
                 <!-- <h4>COLOURS</h4> -->
                 <div class="miniSquare" id="0" onclick="addColour('0')"></div>
                 <div class="miniSquare" id="1" onclick="addColour('1')"></div>
@@ -70,14 +70,14 @@
             </div> -->
 
             <!-- BUTTONS -->
-            <div class="col d-flex flex-lg-column justify-content-evenly">
-                <div class="col-4 col-lg-8 h-50 gameButton m-3" onclick="removeFromArray()">remove</div>
-                <div class="col-4 col-lg-8 h-50 gameButton m-3" id="check" onclick="compareColours(); winner()">check</div>
+            <div class="col col-lg-10 d-flex flex-lg-column align-items-center justify-content-center">
+                <div class="col-5 col-lg-8 h-50 gameButton m-3" onclick="removeFromArray()">remove</div>
+                <div class="col-5 col-lg-8 h-50 gameButton m-3" id="check" onclick="compareColours(); winner()">check</div>
             </div>
         </div>
 
         <!-- BOARD -->
-        <div class="row flex-column" id="game"></div>
+        <div class="row col-lg-7 m-0 p-0 d-flex" id="game"></div>
 
     </div>
 
