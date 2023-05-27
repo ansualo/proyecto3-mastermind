@@ -28,7 +28,7 @@
     <nav class="navbar p-0">
         <div class="container-fluid heigthNavbar">
             <div class="col-11 d-flex align-items-center justify-content-center">
-                <a href="../index.html" class="navbar-brand fs-3 text-light text-opacity-75 bungeeFont ps-5 ms-5">mastermind</a>
+                <a href="../index.html" class="navbar-brand fs-3 text-light text-opacity-75 bungeeFont  ps-md-5 ms-md-5">mastermind</a>
             </div>
             <div class="col-1 d-flex d-flex justify-content-end">
                 <div class="nav-item mx-1 fs-2 text-secondary bungeeFont">
@@ -42,15 +42,15 @@
     </nav>
 
     <div
-        class="container-fluid background d-flex flex-column flex-md-row justify-content-center align-items-center text-light">
+        class="container-fluid p-0 m-0 backgroundGame d-flex flex-column flex-lg-row align-items-center justify-content-evenly text-light">
 
         <div class="row p-0 m-0 d-flex flex-column">
 
             <!-- REMINDER OF LEVEL -->
-            <div class="col h4 m-0" id="level"></div>
+            <div class="col h4" id="level"></div>
 
             <!-- REMINDER OF CHOSEN COLOURS -->
-            <div class="col d-flex">
+            <div class="col d-flex mb-lg-5">
                 <h4>COLOURS</h4>
                 <div class="miniSquare" id="0" onclick="addColour('0')"></div>
                 <div class="miniSquare" id="1" onclick="addColour('1')"></div>
@@ -60,19 +60,19 @@
                 <div class="miniSquare" id="5" onclick="addColour('5')"></div>
             </div>
 
-            <!-- ANSWER -->
-            <div class="col d-flex m-1">
+            <!-- ANSWER -- THIS IS IN A COMMENT TO NOT SHOW THE ANSWER IN THE GAME-->
+            <!-- <div class="col d-flex m-1">
                 <h4>ANSWER</h4>
                 <div class="miniSquare answer" id="answer0"></div>
                 <div class="miniSquare answer" id="answer1"></div>
                 <div class="miniSquare answer" id="answer2"></div>
                 <div class="miniSquare answer" id="answer3"></div>
-            </div>
+            </div> -->
 
             <!-- BUTTONS -->
-            <div>
-                <div class="btn btn-outline-secondary m-1" type="button" onclick="removeFromArray()">remove</div>
-                <button class="btn btn-outline-secondary m-1" type="button" id="check" onclick="compareColours(); winner()">check</button>
+            <div class="col d-flex flex-lg-column">
+                <div class="col-4 col-lg-8 h-50 gameButton m-3" onclick="removeFromArray()">remove</div>
+                <div class="col-4 col-lg-8 h-50 gameButton m-3" id="check" onclick="compareColours(); winner()">check</div>
             </div>
         </div>
 

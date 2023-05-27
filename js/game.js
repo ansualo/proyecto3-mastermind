@@ -121,13 +121,13 @@ const chosenLevel = () => {
     let p = document.createElement("p");
 
     if (selectedLevel == "beginnerRow") {
-        p.innerHTML = "LEVEL: beginner";
+        p.innerHTML = "LEVEL :  beginner";
         level.appendChild(p);
     } else if (selectedLevel == "intermediateRow") {
-        p.innerHTML = "LEVEL: intermediate";
+        p.innerHTML = "LEVEL :  intermediate";
         level.appendChild(p);
     } else {
-        p.innerHTML = "LEVEL: advanced";
+        p.innerHTML = "LEVEL :  advanced";
         level.appendChild(p);
     }
 };
@@ -162,19 +162,19 @@ const correctAnswer = () => {
 correctAnswer();
 
 
-// PAINT THE ANSWER IN THE SQUARES -------------------------------------------------------REMOVE??????????
+// PAINT THE ANSWER IN THE SQUARES  --- THIS IS IN A COMMENT TO NOT SHOW THE ANSWER IN THE GAME
 
-const answerInSquares = () => {
+// const answerInSquares = () => {
 
-    let answer = document.getElementsByClassName("answer");
-    let arrayAnswer = Array.from(answer);
+//     let answer = document.getElementsByClassName("answer");
+//     let arrayAnswer = Array.from(answer);
 
-    for (i = 0; i < 4; i++) {
-        arrayAnswer[i].style.backgroundColor = randomAnswerArray[i]
-    }
-}
+//     for (i = 0; i < 4; i++) {
+//         arrayAnswer[i].style.backgroundColor = randomAnswerArray[i]
+//     }
+// }
 
-answerInSquares();
+// answerInSquares();
 
 
 
