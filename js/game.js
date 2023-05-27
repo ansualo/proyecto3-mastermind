@@ -221,7 +221,7 @@ const removeFromArray = () => {
 
 
 // COMPARE THE CHOSEN COLOURS WITH THE CORRECT ANSWER
-// compare arrays and push into a new array if the circle needs to be black(red) or white
+// compare arrays and push into a new array if the circle needs to be purple or white
 
 let arrayCircles = [];
 
@@ -231,7 +231,7 @@ const compareColours = () => {
         arrayCircles = chosenColoursInRow.map((element, index) => {
 
             if (element === randomAnswerArray[index]) {
-                return "rgb(255, 0, 0)";
+                return "rgb(138, 43, 226)";
             } else if (randomAnswerArray.includes(element)){
                 return "rgb(255, 255, 255)";
             } else {
@@ -274,7 +274,7 @@ const check = (showWinnerPage) => {
 const winner = (showWinnerPage) => {
 
    let stringArrayCircles = arrayCircles.toString();
-   let correctAnswer = "rgb(255, 0, 0),rgb(255, 0, 0),rgb(255, 0, 0),rgb(255, 0, 0)";
+   let correctAnswer = "rgb(138, 43, 226),rgb(138, 43, 226),rgb(138, 43, 226),rgb(138, 43, 226)";
 
     if(stringArrayCircles === correctAnswer){
 

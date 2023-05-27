@@ -47,11 +47,11 @@
         <div class="row p-0 m-0 d-flex flex-column">
 
             <!-- REMINDER OF LEVEL -->
-            <div class="col h4" id="level"></div>
+            <div class="col h4 mb-lg-5" id="level"></div>
 
             <!-- REMINDER OF CHOSEN COLOURS -->
             <div class="col d-flex mb-lg-5">
-                <h4>COLOURS</h4>
+                <!-- <h4>COLOURS</h4> -->
                 <div class="miniSquare" id="0" onclick="addColour('0')"></div>
                 <div class="miniSquare" id="1" onclick="addColour('1')"></div>
                 <div class="miniSquare" id="2" onclick="addColour('2')"></div>
@@ -70,7 +70,7 @@
             </div> -->
 
             <!-- BUTTONS -->
-            <div class="col d-flex flex-lg-column">
+            <div class="col d-flex flex-lg-column justify-content-evenly">
                 <div class="col-4 col-lg-8 h-50 gameButton m-3" onclick="removeFromArray()">remove</div>
                 <div class="col-4 col-lg-8 h-50 gameButton m-3" id="check" onclick="compareColours(); winner()">check</div>
             </div>

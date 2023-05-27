@@ -112,8 +112,8 @@ html body {
 /* GAME PAGE */
 
 .miniSquare{
-    width: 2em;
-    height: 1.8em;
+    width: 3em;
+    height: 3em;
     margin-left: 0.4em;
 }
 
@@ -133,8 +133,8 @@ html body {
 
 @media (min-width: 1025px) {
     .miniSquare{
-        width: 3em;
-        height: 2.5em;
+        width: 4em;
+        height: 3em;
         margin-left: 1em;
     }
 
@@ -160,7 +160,6 @@ html body {
         height: 90vh;
     }
 }
-
 
 /* RESULTS PAGE */
 
