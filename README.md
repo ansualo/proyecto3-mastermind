@@ -1,5 +1,5 @@
 
-*First in Spanish then in* [*English*](https://https://github.com/ansualo/proyecto3-mastermind#mastermind-game)
+*First in Spanish then in* [*English*](https://github.com/ansualo/proyecto3-mastermind#mastermind-game)
 
 ---
 
@@ -83,8 +83,8 @@ Este proyecto ha sido realizado por mí, Andrea Suárez, en mayo de 2023. Todo e
 ### Table of contents 
 
 - What is it?
-- How does it work?
 - Development and technologies used
+- How to play?
 - Known bugs 
 - Credits and License
 
