@@ -5,7 +5,7 @@ const createRows = () => {
     let board = document.getElementById("game");
 
     let mainCol = document.createElement("div");
-    mainCol.className = "col-12 d-flex eachRow";
+    mainCol.className = "col-12 d-flex justify-content-center justify-content-lg-start eachRow";
   
     let squaresDiv = document.createElement("div");
     squaresDiv.className = "d-flex justify-content-evenly align-items-center";

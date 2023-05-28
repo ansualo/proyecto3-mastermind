@@ -28,7 +28,6 @@ html body {
 .logo, .bungeeFont{
     font-family: 'Bungee Shade', cursive;
     font-size: 1.6em;
-    z-index: 1;
 }
 
 .gameButton{
@@ -131,7 +130,7 @@ html body {
     border: 0.1em solid white;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 768px) {
     .miniSquare{
         width: 5.5em;
         height: 4em;
